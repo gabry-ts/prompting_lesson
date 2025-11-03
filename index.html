@@ -34,6 +34,14 @@
         color: #4ade80 !important;
         font-weight: 600;
       }
+
+      /* Make code blocks more compact and fully visible */
+      .reveal pre code {
+        font-size: 0.55em !important;
+        line-height: 1.4 !important;
+        max-height: 500px !important;
+        overflow-y: auto !important;
+      }
     </style>
     <style type="text/css">
       .hljs-ln {
@@ -115,27 +123,11 @@
           </p>
         </section>
 
-        <!-- Slide 3: Prompt cattivo vs buono - esempio 1 -->
+        <!-- Slide 3: Esempio prompt buono - Button component -->
         <section>
-          <div class="grid grid-cols-2 gap-6 mt-6">
-            <div
-              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
-            >
-              <h4 class="bad-prompt">👎🏻</h4>
-              <pre
-                class="code-wrapper"
-              ><code class="language-text">ho bisogno di un button
-mi serve un componente per i button</code></pre>
-              <p>
-                <small
-                  >Zero contesto: quale tech? quale stile? quale uso?</small
-                >
-              </p>
-            </div>
-            <div
-              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
-            >
-              <h4 class="good-prompt">👍🏻</h4>
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
               <pre
                 class="code-wrapper"
               ><code class="language-text">Crea Button component React:
@@ -147,34 +139,18 @@ Accessibility: aria-labels
 TypeScript con PropTypes
 
 Esempio uso nel codice</code></pre>
-              <p>
+              <p class="mt-4">
                 <small>Props definite, vincoli di stile, accessibilità</small>
               </p>
             </div>
           </div>
         </section>
 
-        <!-- Slide 4: Prompt cattivo vs buono - esempio 2 -->
+        <!-- Slide 4: Esempio prompt buono - REST API -->
         <section>
-          <div class="grid grid-cols-2 gap-6 mt-6">
-            <div
-              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
-            >
-              <h4 class="bad-prompt">👎🏻</h4>
-              <pre
-                class="code-wrapper"
-              ><code class="language-text">scrivi qualcosa per gestire gli utenti
-ho bisogno di endpoint per il backend</code></pre>
-              <p>
-                <small
-                  >"Qualcosa" e "endpoint" → AI deve indovinare tutto</small
-                >
-              </p>
-            </div>
-            <div
-              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
-            >
-              <h4 class="good-prompt">👍🏻</h4>
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
               <pre
                 class="code-wrapper"
               ><code class="language-text">Crea REST API per gestione utenti:
@@ -191,7 +167,7 @@ DB: Prisma + PostgreSQL
 Response: JSON standard con error handling
 
 Segui pattern in /api/auth/route.ts</code></pre>
-              <p>
+              <p class="mt-4">
                 <small
                   >Endpoints chiari, stack definito, riferimento al pattern
                   esistente</small
@@ -201,25 +177,11 @@ Segui pattern in /api/auth/route.ts</code></pre>
           </div>
         </section>
 
-        <!-- Slide 5: Esempio 3 - Form Handling -->
+        <!-- Slide 5: Esempio prompt buono - Form Handling -->
         <section>
-          <div class="grid grid-cols-2 gap-6 mt-6">
-            <div
-              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
-            >
-              <h4 class="bad-prompt">👎🏻</h4>
-              <pre
-                class="code-wrapper"
-              ><code class="language-text">fammi un form
-aggiungi validazione e gestione errori</code></pre>
-              <p>
-                <small>"Fammi un form" → quale form? per cosa? con cosa?</small>
-              </p>
-            </div>
-            <div
-              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
-            >
-              <h4 class="good-prompt">👍🏻</h4>
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
               <pre
                 class="code-wrapper"
               ><code class="language-text">Crea CheckoutForm component:
@@ -242,7 +204,7 @@ Loading: Skeleton da @/components/ui/Skeleton
 Segui pattern di:
 - LoginForm.tsx (form structure)
 - useToast.ts (error/success notifications)</code></pre>
-              <p>
+              <p class="mt-4">
                 <small
                   >Riferimenti a dipendenze interne e pattern esistenti</small
                 >
@@ -645,159 +607,7 @@ Pattern:
           </div>
         </section>
 
-        <!-- Slide 15: Takeaways -->
-        <section
-          style="top: 0px; display: block"
-          class="has-dark-background past"
-          data-fragment="3"
-          data-index-h="15"
-          hidden=""
-          aria-hidden="true"
-        >
-          <h2>TL;DR</h2>
-          <div class="grid grid-cols-2 gap-6 mt-10 px-10">
-            <div
-              class="bg-gray-800/50 p-8 rounded-lg border border-gray-700 fragment visible"
-              data-fragment-index="0"
-            >
-              <h4
-                style="
-                  color: var(--accent-good);
-                  margin-bottom: 15px;
-                  font-size: 1em;
-                  --darkreader-inline-color: var(
-                    --darkreader-text--accent-good,
-                    var(--darkreader-text-000000, #dcdbd8)
-                  );
-                "
-                data-darkreader-inline-color=""
-              >
-                Prompt efficaci
-              </h4>
-              <p style="font-size: 0.75em; line-height: 1.5; margin: 0">
-                contesto + obiettivo + vincoli<br /><br /><span
-                  style="
-                    color: var(--text-secondary);
-                    --darkreader-inline-color: var(
-                      --darkreader-text--text-secondary,
-                      var(--darkreader-text-000000, #dcdbd8)
-                    );
-                  "
-                  data-darkreader-inline-color=""
-                  >"Refactor in TypeScript, pattern repository, mantieni
-                  signature"
-                </span>
-              </p>
-            </div>
-
-            <div
-              class="bg-gray-800/50 p-8 rounded-lg border border-gray-700 fragment visible"
-              data-fragment-index="1"
-            >
-              <h4
-                style="
-                  color: var(--accent-good);
-                  margin-bottom: 15px;
-                  font-size: 1em;
-                  --darkreader-inline-color: var(
-                    --darkreader-text--accent-good,
-                    var(--darkreader-text-000000, #dcdbd8)
-                  );
-                "
-                data-darkreader-inline-color=""
-              >
-                Riferisci file esistenti
-              </h4>
-              <p style="font-size: 0.75em; line-height: 1.5; margin: 0">
-                Usa la codebase come riferimento<br /><br />
-                <span
-                  style="
-                    color: var(--text-secondary);
-                    --darkreader-inline-color: var(
-                      --darkreader-text--text-secondary,
-                      var(--darkreader-text-000000, #dcdbd8)
-                    );
-                  "
-                  data-darkreader-inline-color=""
-                >
-                  "Segui stile di UserCard.tsx"
-                </span>
-              </p>
-            </div>
-
-            <div
-              class="bg-gray-800/50 p-8 rounded-lg border border-gray-700 fragment visible"
-              data-fragment-index="2"
-            >
-              <h4
-                style="
-                  color: var(--accent-good);
-                  margin-bottom: 15px;
-                  font-size: 1em;
-                  --darkreader-inline-color: var(
-                    --darkreader-text--accent-good,
-                    var(--darkreader-text-000000, #dcdbd8)
-                  );
-                "
-                data-darkreader-inline-color=""
-              >
-                spec-kit per progetti
-              </h4>
-              <p style="font-size: 0.75em; line-height: 1.5; margin: 0">
-                Feature complesse multi-file<br /><br />
-                <span
-                  style="
-                    color: var(--text-secondary);
-                    --darkreader-inline-color: var(
-                      --darkreader-text--text-secondary,
-                      var(--darkreader-text-000000, #dcdbd8)
-                    );
-                  "
-                  data-darkreader-inline-color=""
-                >
-                  constitution → specify → plan → implement
-                </span>
-              </p>
-            </div>
-
-            <div
-              class="bg-gray-800/50 p-8 rounded-lg border border-gray-700 fragment visible"
-              data-fragment-index="3"
-            >
-              <h4
-                style="
-                  color: var(--accent-good);
-                  margin-bottom: 15px;
-                  font-size: 1em;
-                  --darkreader-inline-color: var(
-                    --darkreader-text--accent-good,
-                    var(--darkreader-text-000000, #dcdbd8)
-                  );
-                "
-                data-darkreader-inline-color=""
-              >
-                Salva i template
-              </h4>
-              <p style="font-size: 0.75em; line-height: 1.5; margin: 0">
-                Riusa prompt che funzionano<br /><br />
-                <span
-                  style="
-                    color: var(--text-secondary);
-                    --darkreader-inline-color: var(
-                      --darkreader-text--text-secondary,
-                      var(--darkreader-text-000000, #dcdbd8)
-                    );
-                  "
-                  data-darkreader-inline-color=""
-                >
-                  Crea una libreria personale
-                </span>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Slide 16: Conclusione -->
+        <!-- Slide 15: Conclusione -->
         <section
           style="top: 305px; display: block"
           class="has-dark-background present"
