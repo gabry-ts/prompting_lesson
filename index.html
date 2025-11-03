@@ -10,161 +10,29 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/night.min.css"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap"
-      rel="stylesheet"
-    />
     <style>
-      :root {
-        --bg-primary: #1a1a1a;
-        --bg-secondary: #252525;
-        --text-primary: #ffffff;
-        --text-secondary: #a0a0a0;
-        --accent-red: #ef4444;
-        --accent-green: #10b981;
-        --border-color: #3a3a3a;
-      }
-
-      .reveal {
-        font-family:
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
-        font-size: 2rem;
-      }
-
-      .reveal h1 {
-        font-size: 3em;
-        font-weight: 900;
-        color: var(--text-primary);
-        text-transform: none;
-        margin-bottom: 0.5em;
-      }
-
-      .reveal h2 {
-        font-size: 2.2em;
-        font-weight: 700;
-        color: var(--text-primary);
-        text-transform: none;
-        margin-bottom: 0.8em;
-      }
-
+      /* Minimal overrides for better readability */
+      .reveal h1,
+      .reveal h2,
       .reveal h3 {
-        font-size: 1.5em;
-        font-weight: 600;
-        color: var(--text-secondary);
         text-transform: none;
-      }
-
-      .reveal h4 {
-        font-size: 1.2em;
-        font-weight: 700;
-        color: var(--text-primary);
-        text-transform: none;
-      }
-
-      .reveal p {
-        color: var(--text-secondary);
-        line-height: 1.6;
-        margin: 1em 0;
-      }
-
-      .reveal small {
-        font-size: 0.7em;
-        color: var(--text-secondary);
-      }
-
-      .reveal strong {
-        color: var(--text-primary);
-        font-weight: 700;
-      }
-
-      .reveal code {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.9em;
-      }
-
-      .reveal pre {
-        width: 100%;
-        margin: 1.5em 0;
-        box-shadow: none;
-      }
-
-      .reveal pre code {
-        font-family: "JetBrains Mono", monospace;
-        padding: 1.5em;
-        border-radius: 8px;
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        line-height: 1.6;
-        font-size: 0.55em;
-      }
-
-      .reveal ul,
-      .reveal ol {
-        text-align: left;
-        margin-left: 2em;
-      }
-
-      .reveal li {
-        color: var(--text-secondary);
-        margin: 0.8em 0;
-      }
-
-      .comparison {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2em;
-        margin-top: 2em;
-      }
-
-      .box {
-        background: var(--bg-secondary);
-        padding: 2em;
-        border-radius: 8px;
-        border: 1px solid var(--border-color);
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-      }
-
-      .box pre {
-        margin: 0;
-        flex: 1;
-      }
-
-      .box pre code {
-        padding: 1em;
-        font-size: 0.75em;
       }
 
       .bad-prompt {
-        color: var(--accent-red);
-        font-weight: 700;
+        color: #ff6b6b !important;
+        font-weight: 600;
       }
 
       .good-prompt {
-        color: var(--accent-green);
-        font-weight: 700;
-      }
-
-      .reveal .slide-number {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.8em;
-      }
-
-      .reveal .progress {
-        height: 3px;
+        color: #4ade80 !important;
+        font-weight: 600;
       }
     </style>
     <style type="text/css">
@@ -221,32 +89,25 @@
         </section>
 
         <!-- Slide 2: Il problema -->
-        <section
-          style="top: 118.5px; display: none"
-          class="has-dark-background past"
-          data-fragment="1"
-          hidden=""
-          aria-hidden="true"
-          data-index-h="1"
-        >
+        <section>
           <h2>Il problema</h2>
-          <pre
-            class="code-wrapper"
-          ><code class="language-text bad-prompt hljs language-plaintext">// quello che scriviamo di solito
-"aggiusta questo codice"
+          <div style="margin-top: 2em">
+            <pre
+              class="code-wrapper"
+            ><code class="language-text">"aggiusta questo codice"
 
 "rendilo migliore"
 
-"fai refactor della funzione X"
-</code></pre>
-          <p class="fragment visible" data-fragment-index="0">
-            Risultato: LLM confuso, output inutile, tempo perso
-          </p>
+"fai refactor della funzione X"</code></pre>
+          </div>
           <p
-            class="fragment visible"
-            style="margin-top: 30px"
-            data-fragment-index="1"
+            class="fragment"
+            data-fragment-index="0"
+            style="margin-top: 2em; font-size: 0.9em"
           >
+            → LLM confuso, output inutile, tempo perso
+          </p>
+          <p class="fragment" data-fragment-index="1" style="margin-top: 2em">
             <small
               >*prompt in italiano per gli esempi, ma in inglese funzionano
               meglio</small
@@ -255,27 +116,29 @@
         </section>
 
         <!-- Slide 3: Prompt cattivo vs buono - esempio 1 -->
-        <section
-          style="top: 20px; display: none"
-          class="has-dark-background past"
-          hidden=""
-          aria-hidden="true"
-          data-index-h="2"
-        >
-          <div class="comparison">
-            <div class="box">
+        <section>
+          <div class="grid grid-cols-2 gap-6 mt-6">
+            <div
+              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
+            >
               <h4 class="bad-prompt">👎🏻</h4>
               <pre
                 class="code-wrapper"
-              ><code class="language-text hljs language-plaintext">crea un button
-component</code></pre>
-              <p><small>Zero info su props, stili, comportamento</small></p>
+              ><code class="language-text">ho bisogno di un button
+mi serve un componente per i button</code></pre>
+              <p>
+                <small
+                  >Zero contesto: quale tech? quale stile? quale uso?</small
+                >
+              </p>
             </div>
-            <div class="box">
+            <div
+              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
+            >
               <h4 class="good-prompt">👍🏻</h4>
               <pre
                 class="code-wrapper"
-              ><code class="language-text hljs language-plaintext">Crea Button component React:
+              ><code class="language-text">Crea Button component React:
 
 Props: label, onClick, disabled, variant
 Variant: 'primary' | 'secondary'
@@ -292,82 +155,96 @@ Esempio uso nel codice</code></pre>
         </section>
 
         <!-- Slide 4: Prompt cattivo vs buono - esempio 2 -->
-        <section
-          style="top: 6.5px; display: none"
-          class="has-dark-background past"
-          hidden=""
-          aria-hidden="true"
-          data-index-h="3"
-        >
-          <div class="comparison">
-            <div class="box">
+        <section>
+          <div class="grid grid-cols-2 gap-6 mt-6">
+            <div
+              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
+            >
               <h4 class="bad-prompt">👎🏻</h4>
               <pre
                 class="code-wrapper"
-              ><code class="language-text hljs language-plaintext">il componente
-re-renderizza troppo</code></pre>
+              ><code class="language-text">scrivi qualcosa per gestire gli utenti
+ho bisogno di endpoint per il backend</code></pre>
               <p>
-                <small>Quale componente? Quando? Perché è un problema?</small>
+                <small
+                  >"Qualcosa" e "endpoint" → AI deve indovinare tutto</small
+                >
               </p>
             </div>
-            <div class="box">
+            <div
+              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
+            >
               <h4 class="good-prompt">👍🏻</h4>
               <pre
                 class="code-wrapper"
-              ><code class="language-text hljs language-plaintext">Fix re-render in ProductList:
+              ><code class="language-text">Crea REST API per gestione utenti:
 
-Problema: render ad ogni keystroke
-Input: search box con 500ms debounce
-Attuale: 10+ render al secondo
-Causa: props reference?
+Endpoints:
+- POST /api/users (signup)
+- GET /api/users/:id
+- PUT /api/users/:id
+- DELETE /api/users/:id
 
-Usa useMemo/useCallback
-Mantieni funzionalità esistente</code></pre>
+Auth: JWT bearer token
+Validation: Zod schema
+DB: Prisma + PostgreSQL
+Response: JSON standard con error handling
+
+Segui pattern in /api/auth/route.ts</code></pre>
               <p>
                 <small
-                  >Componente specifico, causa ipotizzata, soluzione
-                  suggerita</small
+                  >Endpoints chiari, stack definito, riferimento al pattern
+                  esistente</small
                 >
               </p>
             </div>
           </div>
         </section>
 
-        <!-- Slide 5: Esempio 3 - Consistenza con codebase esistente -->
-        <section
-          style="top: 0px; display: none"
-          class="has-dark-background past"
-          hidden=""
-          aria-hidden="true"
-          data-index-h="4"
-        >
-          <div class="comparison">
-            <div class="box">
+        <!-- Slide 5: Esempio 3 - Form Handling -->
+        <section>
+          <div class="grid grid-cols-2 gap-6 mt-6">
+            <div
+              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
+            >
               <h4 class="bad-prompt">👎🏻</h4>
               <pre
                 class="code-wrapper"
-              ><code class="language-text hljs language-plaintext">crea un componente
-Card per mostrare
-i prodotti</code></pre>
-              <p><small>Ignora lo stile esistente della codebase</small></p>
+              ><code class="language-text">fammi un form
+aggiungi validazione e gestione errori</code></pre>
+              <p>
+                <small>"Fammi un form" → quale form? per cosa? con cosa?</small>
+              </p>
             </div>
-            <div class="box">
+            <div
+              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
+            >
               <h4 class="good-prompt">👍🏻</h4>
               <pre
                 class="code-wrapper"
-              ><code class="language-text hljs language-plaintext">Crea ProductCard component React
-seguendo lo stile di UserCard.tsx:
+              ><code class="language-text">Crea CheckoutForm component:
 
-- stessa struttura props
-- stesso pattern di layout (grid)
-- stessi hook per data fetching
-- stile stile tailwind coerente
-- TypeScript strict seguendo regole <br>definite in eslint
+Library: React Hook Form + Zod
+Layout: stepper multi-step (shipping/payment/review)
 
-Props: product, onSelect, loading</code></pre>
+Campi shipping:
+- nome, cognome, indirizzo, città, CAP, paese
+- validazione real-time, async per CAP
+
+Campi payment:
+- carta (Stripe Elements integration)
+- billing address checkbox "uguale a shipping"
+
+Submit: POST /api/checkout
+Error handling: usa useToast da @/hooks/useToast
+Loading: Skeleton da @/components/ui/Skeleton
+
+Segui pattern di:
+- LoginForm.tsx (form structure)
+- useToast.ts (error/success notifications)</code></pre>
               <p>
                 <small
-                  >Riferimento a file esistente, consistenza garantita</small
+                  >Riferimenti a dipendenze interne e pattern esistenti</small
                 >
               </p>
             </div>
@@ -442,12 +319,6 @@ Props: product, onSelect, loading</code></pre>
                 >ogni volta</strong
               >
             </p>
-            <pre
-              class="fragment code-wrapper visible"
-              data-fragment-index="1"
-            ><code class="language-text hljs language-plaintext" style="font-size: 0.45em;">"Usa typescript seguendo regole eslint definite, usa prisma per il db, verifica prima di ogni commit che lint e build procedano senza intoppi"
-"Usa typescript seguendo regole eslint definite, usa prisma per il db, verifica prima di ogni commit che lint e build procedano senza intoppi"
-"Usa typescript seguendo regole eslint definite, usa prisma per il db, verifica prima di ogni commit che lint e build procedano senza intoppi"</code></pre>
 
             <p
               class="fragment visible"
@@ -475,7 +346,6 @@ Props: product, onSelect, loading</code></pre>
                 data-darkreader-inline-color=""
                 >collaborare</strong
               >
-              con altri dev
             </p>
             <p
               class="fragment visible"
@@ -532,19 +402,14 @@ Props: product, onSelect, loading</code></pre>
         <!-- Slide 8: Diagramma workflow spec-kit -->
         <section>
           <h2>Il workflow</h2>
-          <div class="mermaid">
-graph LR
-    A[constitution]:::blue --> B[specify]:::blue
-    B --> C{chiaro?}
-    C -->|no| D[clarify]:::red
-    D --> C
-    C -->|sì| E[plan]:::green
-    E --> F[tasks]:::green
-    F --> G[implement]:::green
-
-    classDef blue fill:#667eea
-    classDef red fill:#f5576c
-    classDef green fill:#51cf66
+          <div
+            class="mermaid bg-gray-800/50 p-8 rounded-lg border border-gray-700"
+          >
+            graph LR A[constitution]:::blue --> B[specify]:::blue B -->
+            C{chiaro?} C -->|no| D[clarify]:::red D --> C C -->|sì|
+            E[plan]:::green E --> F[tasks]:::green F --> G[implement]:::green
+            classDef blue fill:#667eea classDef red fill:#f5576c classDef green
+            fill:#51cf66
           </div>
         </section>
 
@@ -576,6 +441,8 @@ graph LR
 
 API REST per e-commerce:
 - Node.js 20 + TypeScript strict
+- Database: PostgreSQL + Prisma ORM
+- Payments: Stripe SDK per checkout
 - Test coverage &gt;85% (Jest)
 - OpenAPI 3.0 spec completa
 - Zero downtime deployments
@@ -742,8 +609,10 @@ Pattern:
           data-index-h="14"
         >
           <h2>Quando usarlo</h2>
-          <div class="comparison">
-            <div class="box">
+          <div class="grid grid-cols-2 gap-6 mt-6">
+            <div
+              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
+            >
               <h4 class="good-prompt">✓ Usa spec-kit</h4>
               <ul
                 style="
@@ -753,12 +622,13 @@ Pattern:
                 "
               >
                 <li>Feature complessa multi-file</li>
-                <li>Coordinazione team</li>
                 <li>Requisiti da validare</li>
                 <li>Architettura da pianificare</li>
               </ul>
             </div>
-            <div class="box">
+            <div
+              class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 flex flex-col gap-3"
+            >
               <h4 class="bad-prompt">✗ Non serve</h4>
               <ul
                 style="
@@ -767,7 +637,7 @@ Pattern:
                   margin: 20px 0 0 20px;
                 "
               >
-                <li>Quick fix o hotfix</li>
+                <li>Debugging</li>
                 <li>Refactor singola funzione</li>
                 <li>Spike o prototipi veloci</li>
               </ul>
@@ -785,18 +655,9 @@ Pattern:
           aria-hidden="true"
         >
           <h2>TL;DR</h2>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 25px;
-              margin-top: 40px;
-              padding: 0 40px;
-            "
-          >
+          <div class="grid grid-cols-2 gap-6 mt-10 px-10">
             <div
-              class="box fragment visible"
-              style="padding: 30px"
+              class="bg-gray-800/50 p-8 rounded-lg border border-gray-700 fragment visible"
               data-fragment-index="0"
             >
               <h4
@@ -830,8 +691,7 @@ Pattern:
             </div>
 
             <div
-              class="box fragment visible"
-              style="padding: 30px"
+              class="bg-gray-800/50 p-8 rounded-lg border border-gray-700 fragment visible"
               data-fragment-index="1"
             >
               <h4
@@ -866,8 +726,7 @@ Pattern:
             </div>
 
             <div
-              class="box fragment visible"
-              style="padding: 30px"
+              class="bg-gray-800/50 p-8 rounded-lg border border-gray-700 fragment visible"
               data-fragment-index="2"
             >
               <h4
@@ -902,8 +761,7 @@ Pattern:
             </div>
 
             <div
-              class="box fragment visible"
-              style="padding: 30px"
+              class="bg-gray-800/50 p-8 rounded-lg border border-gray-700 fragment visible"
               data-fragment-index="3"
             >
               <h4
