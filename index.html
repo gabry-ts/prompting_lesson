@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="reveal-full-page">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,9 +16,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --bg-primary: #1a1a1a;
@@ -31,7 +34,12 @@
       }
 
       .reveal {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
         font-size: 2rem;
       }
 
@@ -151,7 +159,7 @@
       }
 
       .reveal .slide-number {
-        font-family: 'JetBrains Mono', monospace;
+        font-family: "JetBrains Mono", monospace;
         font-size: 0.8em;
       }
 
@@ -159,31 +167,88 @@
         height: 3px;
       }
     </style>
+    <style type="text/css">
+      .hljs-ln {
+        border-collapse: collapse;
+      }
+      .hljs-ln td {
+        padding: 0;
+      }
+      .hljs-ln-n:before {
+        content: attr(data-line-number);
+      }
+    </style>
   </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+  <body
+    class="reveal-viewport"
+    style="
+      --slide-width: 960px;
+      --slide-height: 700px;
+      --slide-scale: 1.4893714285714286;
+    "
+  >
+    <div
+      class="reveal slide center focused has-horizontal-slides has-dark-background ready"
+      role="application"
+      data-transition-speed="fast"
+      data-background-transition="fade"
+      style="cursor: none"
+    >
+      <div
+        class="slides"
+        style="
+          width: 960px;
+          height: 700px;
+          inset: 50% auto auto 50%;
+          transform: translate(-50%, -50%) scale(1.48937);
+        "
+      >
         <!-- Slide 1: Title -->
-        <section style="text-align: left; padding-left: 10%;">
-          <h1 style="font-size: 4em; margin-bottom: 0.2em;">Prompt Engineering</h1>
-          <h3 style="font-size: 1.8em; margin-bottom: 1em; opacity: 0.6;">per dev che non vogliono<br>perderci tempo</h3>
-          <p style="opacity: 0.4;"><small>10 minuti di roba che funziona davvero</small></p>
+        <section
+          style="text-align: left; padding-left: 10%; top: 44px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="0"
+        >
+          <h1 style="font-size: 4em; margin-bottom: 0.2em">
+            Prompt Engineering
+          </h1>
+          <h3 style="font-size: 1.8em; margin-bottom: 1em; opacity: 0.6">
+            per dev che non vogliono<br />perderci tempo
+          </h3>
+          <p style="opacity: 0.4">
+            <small>10 minuti di roba che funziona davvero</small>
+          </p>
         </section>
 
         <!-- Slide 2: Il problema -->
-        <section>
+        <section
+          style="top: 118.5px; display: none"
+          class="has-dark-background past"
+          data-fragment="1"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="1"
+        >
           <h2>Il problema</h2>
-          <pre><code class="language-text bad-prompt">// quello che scriviamo di solito
+          <pre
+            class="code-wrapper"
+          ><code class="language-text bad-prompt hljs language-plaintext">// quello che scriviamo di solito
 "aggiusta questo codice"
 
 "rendilo migliore"
 
-"refactora"
+"fai refactor della funzione X"
 </code></pre>
-          <p class="fragment">
+          <p class="fragment visible" data-fragment-index="0">
             Risultato: LLM confuso, output inutile, tempo perso
           </p>
-          <p class="fragment" style="margin-top: 30px">
+          <p
+            class="fragment visible"
+            style="margin-top: 30px"
+            data-fragment-index="1"
+          >
             <small
               >*prompt in italiano per gli esempi, ma in inglese funzionano
               meglio</small
@@ -192,17 +257,27 @@
         </section>
 
         <!-- Slide 3: Prompt cattivo vs buono - esempio 1 -->
-        <section>
+        <section
+          style="top: 20px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="2"
+        >
           <div class="comparison">
             <div class="box">
-              <h4 class="bad-prompt">Cattivo</h4>
-              <pre><code class="language-text">crea un button
+              <h4 class="bad-prompt">👎🏻</h4>
+              <pre
+                class="code-wrapper"
+              ><code class="language-text hljs language-plaintext">crea un button
 component</code></pre>
               <p><small>Zero info su props, stili, comportamento</small></p>
             </div>
             <div class="box">
-              <h4 class="good-prompt">Buono</h4>
-              <pre><code class="language-text">Crea Button component React:
+              <h4 class="good-prompt">👍🏻</h4>
+              <pre
+                class="code-wrapper"
+              ><code class="language-text hljs language-plaintext">Crea Button component React:
 
 Props: label, onClick, disabled, variant
 Variant: 'primary' | 'secondary'
@@ -211,157 +286,325 @@ Accessibility: aria-labels
 TypeScript con PropTypes
 
 Esempio uso nel codice</code></pre>
-              <p><small>Props definite, vincoli di stile, accessibilità</small></p>
+              <p>
+                <small>Props definite, vincoli di stile, accessibilità</small>
+              </p>
             </div>
           </div>
         </section>
 
         <!-- Slide 4: Prompt cattivo vs buono - esempio 2 -->
-        <section>
+        <section
+          style="top: 6.5px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="3"
+        >
           <div class="comparison">
             <div class="box">
-              <h4 class="bad-prompt">Cattivo</h4>
-              <pre><code class="language-text">il componente
+              <h4 class="bad-prompt">👎🏻</h4>
+              <pre
+                class="code-wrapper"
+              ><code class="language-text hljs language-plaintext">il componente
 re-renderizza troppo</code></pre>
-              <p><small>Quale componente? Quando? Perché è un problema?</small></p>
+              <p>
+                <small>Quale componente? Quando? Perché è un problema?</small>
+              </p>
             </div>
             <div class="box">
-              <h4 class="good-prompt">Buono</h4>
-              <pre><code class="language-text">Fix re-render in ProductList:
+              <h4 class="good-prompt">👍🏻</h4>
+              <pre
+                class="code-wrapper"
+              ><code class="language-text hljs language-plaintext">Fix re-render in ProductList:
 
 Problema: render ad ogni keystroke
 Input: search box con 500ms debounce
 Attuale: 10+ render al secondo
-Causa: props reference instability?
+Causa: props reference?
 
 Usa useMemo/useCallback
 Mantieni funzionalità esistente</code></pre>
-              <p><small>Componente specifico, causa ipotizzata, soluzione suggerita</small></p>
+              <p>
+                <small
+                  >Componente specifico, causa ipotizzata, soluzione
+                  suggerita</small
+                >
+              </p>
             </div>
           </div>
         </section>
 
         <!-- Slide 5: Esempio 3 - Consistenza con codebase esistente -->
-        <section>
+        <section
+          style="top: 0px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="4"
+        >
           <div class="comparison">
             <div class="box">
-              <h4 class="bad-prompt">Cattivo</h4>
-              <pre><code class="language-text">crea un componente
+              <h4 class="bad-prompt">👎🏻</h4>
+              <pre
+                class="code-wrapper"
+              ><code class="language-text hljs language-plaintext">crea un componente
 Card per mostrare
 i prodotti</code></pre>
               <p><small>Ignora lo stile esistente della codebase</small></p>
             </div>
             <div class="box">
-              <h4 class="good-prompt">Buono</h4>
-              <pre><code class="language-text">Crea ProductCard component React
+              <h4 class="good-prompt">👍🏻</h4>
+              <pre
+                class="code-wrapper"
+              ><code class="language-text hljs language-plaintext">Crea ProductCard component React
 seguendo lo stile di UserCard.tsx:
 
 - stessa struttura props
 - stesso pattern di layout (grid)
 - stessi hook per data fetching
-- stile Tailwind coerente
-- TypeScript strict
+- stile stile tailwind coerente
+- TypeScript strict seguendo regole <br>definite in eslint
 
 Props: product, onSelect, loading</code></pre>
-              <p><small>Riferimento a file esistente, consistenza garantita</small></p>
+              <p>
+                <small
+                  >Riferimento a file esistente, consistenza garantita</small
+                >
+              </p>
             </div>
           </div>
         </section>
 
         <!-- Slide 6: Le 3 regole d'oro -->
-        <section>
+        <section
+          style="top: 104.5px; display: none"
+          class="has-dark-background past"
+          data-fragment="3"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="5"
+        >
           <h2>Le 3 regole d'oro</h2>
           <ol>
-            <li class="fragment">
+            <li class="fragment visible" data-fragment-index="0">
               <strong>Contesto</strong>: linguaggio, framework, vincoli tecnici
             </li>
-            <li class="fragment">
+            <li class="fragment visible" data-fragment-index="1">
               <strong>Obiettivo</strong>: cosa vuoi ottenere esattamente
             </li>
-            <li class="fragment">
+            <li class="fragment visible" data-fragment-index="2">
               <strong>Formato</strong>: come vuoi l'output
             </li>
           </ol>
-          <p class="fragment" style="margin-top: 40px">
+          <p
+            class="fragment visible"
+            style="margin-top: 40px"
+            data-fragment-index="3"
+          >
             <small>Pensalo come una user story ben scritta</small>
           </p>
         </section>
 
         <!-- Slide 7: Il problema dei prompt -->
-        <section>
+        <section
+          style="top: 0px; display: none"
+          class="has-dark-background past"
+          data-fragment="4"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="6"
+        >
           <h2>Ma c'è un problema...</h2>
-          <div style="margin-top: 40px;">
-            <p class="fragment" style="font-size: 0.9em; color: var(--text-secondary); margin: 25px 0;">
-              Devi ripetere contesto/vincoli <strong style="color: var(--accent-bad);">ogni volta</strong>
+          <div style="margin-top: 40px">
+            <p
+              class="fragment visible"
+              style="
+                font-size: 0.9em;
+                color: var(--text-secondary);
+                margin: 25px 0px;
+                --darkreader-inline-color: var(
+                  --darkreader-text--text-secondary,
+                  var(--darkreader-text-000000, #dcdbd8)
+                );
+              "
+              data-darkreader-inline-color=""
+              data-fragment-index="0"
+            >
+              Devi ripetere contesto/vincoli
+              <strong
+                style="
+                  color: var(--accent-bad);
+                  --darkreader-inline-color: var(
+                    --darkreader-text--accent-bad,
+                    var(--darkreader-text-000000, #dcdbd8)
+                  );
+                "
+                data-darkreader-inline-color=""
+                >ogni volta</strong
+              >
             </p>
-            <pre class="fragment"><code class="language-text" style="font-size: 0.45em;">"Usa TypeScript strict, Prisma, test coverage >80%, ..."
-"Usa TypeScript strict, Prisma, test coverage >80%, ..."
-"Usa TypeScript strict, Prisma, test coverage >80%, ..."</code></pre>
+            <pre
+              class="fragment code-wrapper visible"
+              data-fragment-index="1"
+            ><code class="language-text hljs language-plaintext" style="font-size: 0.45em;">"Usa typescript seguendo regole eslint definite, usa prisma per il db, verifica prima di ogni commit che lint e build procedano senza intoppi"
+"Usa typescript seguendo regole eslint definite, usa prisma per il db, verifica prima di ogni commit che lint e build procedano senza intoppi"
+"Usa typescript seguendo regole eslint definite, usa prisma per il db, verifica prima di ogni commit che lint e build procedano senza intoppi"</code></pre>
 
-            <p class="fragment" style="font-size: 0.9em; color: var(--text-secondary); margin: 35px 0 25px 0;">
-              Difficile <strong style="color: var(--accent-bad);">collaborare</strong> con altri dev
+            <p
+              class="fragment visible"
+              style="
+                font-size: 0.9em;
+                color: var(--text-secondary);
+                margin: 35px 0px 25px;
+                --darkreader-inline-color: var(
+                  --darkreader-text--text-secondary,
+                  var(--darkreader-text-000000, #dcdbd8)
+                );
+              "
+              data-darkreader-inline-color=""
+              data-fragment-index="2"
+            >
+              Difficile
+              <strong
+                style="
+                  color: var(--accent-bad);
+                  --darkreader-inline-color: var(
+                    --darkreader-text--accent-bad,
+                    var(--darkreader-text-000000, #dcdbd8)
+                  );
+                "
+                data-darkreader-inline-color=""
+                >collaborare</strong
+              >
+              con altri dev
             </p>
-            <p class="fragment" style="font-size: 0.8em; color: var(--text-secondary); font-style: italic;">
-              "Quali erano i vincoli del progetto? Che stack stiamo usando?"
+            <p
+              class="fragment visible"
+              style="
+                font-size: 0.8em;
+                color: var(--text-secondary);
+                font-style: italic;
+                --darkreader-inline-color: var(
+                  --darkreader-text--text-secondary,
+                  var(--darkreader-text-000000, #dcdbd8)
+                );
+              "
+              data-darkreader-inline-color=""
+              data-fragment-index="3"
+            >
+              "Quali erano i vincoli del progetto? Quali linee di stile abbiamo?
             </p>
 
-            <p class="fragment" style="font-size: 1.1em; color: var(--accent-good); margin-top: 50px;">
+            <p
+              class="fragment visible"
+              style="
+                font-size: 1.1em;
+                color: var(--accent-good);
+                margin-top: 50px;
+                --darkreader-inline-color: var(
+                  --darkreader-text--accent-good,
+                  var(--darkreader-text-000000, #dcdbd8)
+                );
+              "
+              data-darkreader-inline-color=""
+              data-fragment-index="4"
+            >
               <strong>spec-kit risolve questo problema</strong>
             </p>
           </div>
         </section>
 
         <!-- Slide 8: GitHub spec-kit intro -->
-        <section>
+        <section
+          style="top: 0px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="7"
+        >
           <h2>GitHub spec-kit</h2>
           <p>Spec-Driven Development: da idee vaghe a codice strutturato</p>
-          <pre><code class="language-bash">uv tool install specify-cli \
+          <pre
+            class="code-wrapper"
+          ><code class="language-bash hljs">uv tool install specify-cli \
   --from git+https://github.com/github/spec-kit.git</code></pre>
         </section>
 
         <!-- Slide 8: Diagramma workflow spec-kit -->
-        <section>
+        <section
+          style="top: 0px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="8"
+        >
           <h2>Il workflow</h2>
-          <pre class="mermaid">
-graph LR
-    A[constitution] --> B[specify]
-    B --> C{chiaro?}
-    C -->|no| D[clarify]
-    D --> C
-    C -->|sì| E[plan]
-    E --> F[tasks]
-    F --> G[implement]
-
-    style A fill:#667eea
-    style B fill:#667eea
-    style D fill:#f5576c
-    style E fill:#51cf66
-    style F fill:#51cf66
-    style G fill:#51cf66
-          </pre>
+          <pre
+            class="mermaid"
+            data-processed="true"
+          ><svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="-8 -8 16 16" style="max-width: 16px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1762198689817"><style>#mermaid-1762198689817{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#ccc;}#mermaid-1762198689817 .error-icon{fill:#a44141;}#mermaid-1762198689817 .error-text{fill:#ddd;stroke:#ddd;}#mermaid-1762198689817 .edge-thickness-normal{stroke-width:2px;}#mermaid-1762198689817 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1762198689817 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1762198689817 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1762198689817 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1762198689817 .marker{fill:lightgrey;stroke:lightgrey;}#mermaid-1762198689817 .marker.cross{stroke:lightgrey;}#mermaid-1762198689817 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1762198689817 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#ccc;}#mermaid-1762198689817 .cluster-label text{fill:#F9FFFE;}#mermaid-1762198689817 .cluster-label span,#mermaid-1762198689817 p{color:#F9FFFE;}#mermaid-1762198689817 .label text,#mermaid-1762198689817 span,#mermaid-1762198689817 p{fill:#ccc;color:#ccc;}#mermaid-1762198689817 .node rect,#mermaid-1762198689817 .node circle,#mermaid-1762198689817 .node ellipse,#mermaid-1762198689817 .node polygon,#mermaid-1762198689817 .node path{fill:#1f2020;stroke:#81B1DB;stroke-width:1px;}#mermaid-1762198689817 .flowchart-label text{text-anchor:middle;}#mermaid-1762198689817 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1762198689817 .node .label{text-align:center;}#mermaid-1762198689817 .node.clickable{cursor:pointer;}#mermaid-1762198689817 .arrowheadPath{fill:lightgrey;}#mermaid-1762198689817 .edgePath .path{stroke:lightgrey;stroke-width:2.0px;}#mermaid-1762198689817 .flowchart-link{stroke:lightgrey;fill:none;}#mermaid-1762198689817 .edgeLabel{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaid-1762198689817 .edgeLabel rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaid-1762198689817 .labelBkg{background-color:rgba(87.75, 87.75, 87.75, 0.5);}#mermaid-1762198689817 .cluster rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:rgba(255, 255, 255, 0.25);stroke-width:1px;}#mermaid-1762198689817 .cluster text{fill:#F9FFFE;}#mermaid-1762198689817 .cluster span,#mermaid-1762198689817 p{color:#F9FFFE;}#mermaid-1762198689817 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(20, 1.5873015873%, 12.3529411765%);border:1px solid rgba(255, 255, 255, 0.25);border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1762198689817 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#ccc;}#mermaid-1762198689817 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="6" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1762198689817_flowchart-pointEnd"><path style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="4.5" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1762198689817_flowchart-pointStart"><path style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1762198689817_flowchart-circleEnd"><circle style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1762198689817_flowchart-circleStart"><circle style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart" id="mermaid-1762198689817_flowchart-crossEnd"><path style="stroke-width: 2px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart" id="mermaid-1762198689817_flowchart-crossStart"><path style="stroke-width: 2px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#mermaid-1762198689817_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" id="L-A-B-0" d="M0,15L4.167,15C8.333,15,16.667,15,24.117,15C31.567,15,38.133,15,41.417,15L44.7,15"></path><path marker-end="url(#mermaid-1762198689817_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-C" id="L-B-C-0" d="M50,15L54.167,15C58.333,15,66.667,15,74.117,15C81.567,15,88.133,15,91.417,15L94.7,15"></path><path marker-end="url(#mermaid-1762198689817_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-D" id="L-C-D-0" d="M100,15L104.167,10.833C108.333,6.667,116.667,-1.667,124.18,-4.495C131.693,-7.323,138.386,-4.646,141.733,-3.307L145.079,-1.968"></path><path marker-end="url(#mermaid-1762198689817_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-C" id="L-D-C-0" d="M150,0L145.833,2.5C141.667,5,133.333,10,129.295,12.486C125.256,14.972,125.512,14.943,125.64,14.929L125.768,14.915"></path><path marker-end="url(#mermaid-1762198689817_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-E" id="L-C-E-0" d="M125.5,50.5L125.417,50.417C125.333,50.333,125.167,50.167,128.367,50.083C131.567,50,138.133,50,141.417,50L144.7,50"></path><path marker-end="url(#mermaid-1762198689817_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-F" id="L-E-F-0" d="M150,50L154.167,50C158.333,50,166.667,50,174.117,50C181.567,50,188.133,50,191.417,50L194.7,50"></path><path marker-end="url(#mermaid-1762198689817_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-F LE-G" id="L-F-G-0" d="M200,50L204.167,50C208.333,50,216.667,50,224.117,50C231.567,50,238.133,50,241.417,50L244.7,50"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g transform="translate(undefined, NaN)" class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">no</span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g transform="translate(undefined, NaN)" class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">sì</span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g transform="translate(0, 15)" data-id="A" data-node="true" id="flowchart-A-0" class="node default default flowchart-label"><rect height="20" width="20" y="-10" x="-10" ry="0" rx="0" style="fill:#667eea;" class="basic label-container"></rect><g transform="translate(0, 0)" style="" class="label"><rect></rect><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">constitution</span></div></foreignObject></g></g><g transform="translate(50, 15)" data-id="B" data-node="true" id="flowchart-B-1" class="node default default flowchart-label"><rect height="20" width="20" y="-10" x="-10" ry="0" rx="0" style="fill:#667eea;" class="basic label-container"></rect><g transform="translate(0, 0)" style="" class="label"><rect></rect><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">specify</span></div></foreignObject></g></g><g transform="translate(100, 15)" data-id="C" data-node="true" id="flowchart-C-3" class="node default default flowchart-label"><polygon style="" transform="translate(-20,20)" class="label-container" points="20,0 40,-20 20,-40 0,-20"></polygon><g transform="translate(0, 0)" style="" class="label"><rect></rect><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">chiaro?</span></div></foreignObject></g></g><g transform="translate(150, 0)" data-id="D" data-node="true" id="flowchart-D-5" class="node default default flowchart-label"><rect height="20" width="20" y="-10" x="-10" ry="0" rx="0" style="fill:#f5576c;" class="basic label-container"></rect><g transform="translate(0, 0)" style="" class="label"><rect></rect><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">clarify</span></div></foreignObject></g></g><g transform="translate(150, 50)" data-id="E" data-node="true" id="flowchart-E-9" class="node default default flowchart-label"><rect height="20" width="20" y="-10" x="-10" ry="0" rx="0" style="fill:#51cf66;" class="basic label-container"></rect><g transform="translate(0, 0)" style="" class="label"><rect></rect><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">plan</span></div></foreignObject></g></g><g transform="translate(200, 50)" data-id="F" data-node="true" id="flowchart-F-11" class="node default default flowchart-label"><rect height="20" width="20" y="-10" x="-10" ry="0" rx="0" style="fill:#51cf66;" class="basic label-container"></rect><g transform="translate(0, 0)" style="" class="label"><rect></rect><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">tasks</span></div></foreignObject></g></g><g transform="translate(250, 50)" data-id="G" data-node="true" id="flowchart-G-13" class="node default default flowchart-label"><rect height="20" width="20" y="-10" x="-10" ry="0" rx="0" style="fill:#51cf66;" class="basic label-container"></rect><g transform="translate(0, 0)" style="" class="label"><rect></rect><foreignObject height="0" width="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">implement</span></div></foreignObject></g></g></g></g></g></svg></pre>
         </section>
 
         <!-- Slide 9: constitution -->
-        <section>
+        <section
+          style="top: 0px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="9"
+        >
           <h2>/speckit.constitution</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 30px;">Principi fondamentali del progetto</p>
-          <pre><code class="language-text">/speckit.constitution
+          <p
+            style="
+              color: var(--text-secondary);
+              margin-bottom: 30px;
+              --darkreader-inline-color: var(
+                --darkreader-text--text-secondary,
+                var(--darkreader-text-000000, #dcdbd8)
+              );
+            "
+            data-darkreader-inline-color=""
+          >
+            Principi fondamentali del progetto
+          </p>
+          <pre
+            class="code-wrapper"
+          ><code class="language-text hljs language-plaintext">/speckit.constitution
 
 API REST per e-commerce:
 - Node.js 20 + TypeScript strict
-- Test coverage >85% (Jest + Supertest)
-- Rate limiting 100 req/min per user
-- Response time p95 < 200ms
+- Test coverage &gt;85% (Jest)
 - OpenAPI 3.0 spec completa
 - Zero downtime deployments
 </code></pre>
         </section>
 
         <!-- Slide 10: specify -->
-        <section>
+        <section
+          style="top: 0px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="10"
+        >
           <h2>/speckit.specify</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 30px;">COSA vuoi costruire (user stories)</p>
-          <pre><code class="language-text">/speckit.specify
+          <p
+            style="
+              color: var(--text-secondary);
+              margin-bottom: 30px;
+              --darkreader-inline-color: var(
+                --darkreader-text--text-secondary,
+                var(--darkreader-text-000000, #dcdbd8)
+              );
+            "
+            data-darkreader-inline-color=""
+          >
+            COSA vuoi costruire (user stories)
+          </p>
+          <pre
+            class="code-wrapper"
+          ><code class="language-text hljs language-plaintext">/speckit.specify
 
 Endpoint gestione ordini:
 - POST /orders: crea ordine da carrello
@@ -376,10 +619,30 @@ Errori: formato standard con code + message
         </section>
 
         <!-- Slide 11: clarify -->
-        <section>
+        <section
+          style="top: 0px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="11"
+        >
           <h2>/speckit.clarify</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 30px;">Risolve ambiguità (opzionale)</p>
-          <pre><code class="language-text">/speckit.clarify
+          <p
+            style="
+              color: var(--text-secondary);
+              margin-bottom: 30px;
+              --darkreader-inline-color: var(
+                --darkreader-text--text-secondary,
+                var(--darkreader-text-000000, #dcdbd8)
+              );
+            "
+            data-darkreader-inline-color=""
+          >
+            Risolve ambiguità (opzionale)
+          </p>
+          <pre
+            class="code-wrapper"
+          ><code class="language-text hljs language-plaintext">/speckit.clarify
 
 L'AI chiede:
 - "Paginazione: cursor-based o offset?"
@@ -391,10 +654,30 @@ L'AI chiede:
         </section>
 
         <!-- Slide 12: plan -->
-        <section>
+        <section
+          style="top: 0px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="12"
+        >
           <h2>/speckit.plan</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 30px;">COME implementare (tech stack)</p>
-          <pre><code class="language-text">/speckit.plan
+          <p
+            style="
+              color: var(--text-secondary);
+              margin-bottom: 30px;
+              --darkreader-inline-color: var(
+                --darkreader-text--text-secondary,
+                var(--darkreader-text-000000, #dcdbd8)
+              );
+            "
+            data-darkreader-inline-color=""
+          >
+            COME implementare (tech stack)
+          </p>
+          <pre
+            class="code-wrapper"
+          ><code class="language-text hljs language-plaintext">/speckit.plan
 
 Stack:
 - Express + TypeScript + Prisma
@@ -411,10 +694,30 @@ Pattern:
         </section>
 
         <!-- Slide 13: tasks + implement -->
-        <section>
+        <section
+          style="top: 83px; display: none"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="13"
+        >
           <h2>/speckit.tasks → /speckit.implement</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 30px;">Task list → esecuzione automatica</p>
-          <pre><code class="language-text">/speckit.tasks genera:
+          <p
+            style="
+              color: var(--text-secondary);
+              margin-bottom: 30px;
+              --darkreader-inline-color: var(
+                --darkreader-text--text-secondary,
+                var(--darkreader-text-000000, #dcdbd8)
+              );
+            "
+            data-darkreader-inline-color=""
+          >
+            Task list → esecuzione automatica
+          </p>
+          <pre
+            class="code-wrapper"
+          ><code class="language-text hljs language-plaintext">/speckit.tasks genera:
 1. Prisma schema: Order, OrderItem, Payment
 2. DTO + validation schemas (Zod)
 3. OrderRepository con transactions
@@ -429,12 +732,24 @@ Pattern:
         </section>
 
         <!-- Slide 14: Quando usare spec-kit -->
-        <section>
+        <section
+          style="top: 9px; display: block"
+          class="has-dark-background past"
+          hidden=""
+          aria-hidden="true"
+          data-index-h="14"
+        >
           <h2>Quando usarlo</h2>
           <div class="comparison">
             <div class="box">
               <h4 class="good-prompt">✓ Usa spec-kit</h4>
-              <ul style="font-size: 0.75em; text-align: left; margin: 20px 0 0 20px;">
+              <ul
+                style="
+                  font-size: 0.75em;
+                  text-align: left;
+                  margin: 20px 0 0 20px;
+                "
+              >
                 <li>Feature complessa multi-file</li>
                 <li>Coordinazione team</li>
                 <li>Requisiti da validare</li>
@@ -443,55 +758,178 @@ Pattern:
             </div>
             <div class="box">
               <h4 class="bad-prompt">✗ Non serve</h4>
-              <ul style="font-size: 0.75em; text-align: left; margin: 20px 0 0 20px;">
+              <ul
+                style="
+                  font-size: 0.75em;
+                  text-align: left;
+                  margin: 20px 0 0 20px;
+                "
+              >
                 <li>Quick fix o hotfix</li>
                 <li>Refactor singola funzione</li>
                 <li>Spike o prototipi veloci</li>
-                <li>One-liner changes</li>
               </ul>
             </div>
           </div>
         </section>
 
         <!-- Slide 15: Takeaways -->
-        <section>
+        <section
+          style="top: 0px; display: block"
+          class="has-dark-background past"
+          data-fragment="3"
+          data-index-h="15"
+          hidden=""
+          aria-hidden="true"
+        >
           <h2>TL;DR</h2>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px; padding: 0 40px;">
-            <div class="box fragment" style="padding: 30px;">
-              <h4 style="color: var(--accent-good); margin-bottom: 15px; font-size: 1em;">Prompt efficaci</h4>
-              <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
-                contesto + obiettivo + vincoli<br><br>
-                <span style="color: var(--text-secondary);">
-                  "Refactora in TypeScript, pattern repository, mantieni signature"
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 25px;
+              margin-top: 40px;
+              padding: 0 40px;
+            "
+          >
+            <div
+              class="box fragment visible"
+              style="padding: 30px"
+              data-fragment-index="0"
+            >
+              <h4
+                style="
+                  color: var(--accent-good);
+                  margin-bottom: 15px;
+                  font-size: 1em;
+                  --darkreader-inline-color: var(
+                    --darkreader-text--accent-good,
+                    var(--darkreader-text-000000, #dcdbd8)
+                  );
+                "
+                data-darkreader-inline-color=""
+              >
+                Prompt efficaci
+              </h4>
+              <p style="font-size: 0.75em; line-height: 1.5; margin: 0">
+                contesto + obiettivo + vincoli<br /><br /><span
+                  style="
+                    color: var(--text-secondary);
+                    --darkreader-inline-color: var(
+                      --darkreader-text--text-secondary,
+                      var(--darkreader-text-000000, #dcdbd8)
+                    );
+                  "
+                  data-darkreader-inline-color=""
+                  >"Refactor in TypeScript, pattern repository, mantieni
+                  signature"
                 </span>
               </p>
             </div>
 
-            <div class="box fragment" style="padding: 30px;">
-              <h4 style="color: var(--accent-good); margin-bottom: 15px; font-size: 1em;">Riferisci file esistenti</h4>
-              <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
-                Usa la codebase come riferimento<br><br>
-                <span style="color: var(--text-secondary);">
+            <div
+              class="box fragment visible"
+              style="padding: 30px"
+              data-fragment-index="1"
+            >
+              <h4
+                style="
+                  color: var(--accent-good);
+                  margin-bottom: 15px;
+                  font-size: 1em;
+                  --darkreader-inline-color: var(
+                    --darkreader-text--accent-good,
+                    var(--darkreader-text-000000, #dcdbd8)
+                  );
+                "
+                data-darkreader-inline-color=""
+              >
+                Riferisci file esistenti
+              </h4>
+              <p style="font-size: 0.75em; line-height: 1.5; margin: 0">
+                Usa la codebase come riferimento<br /><br />
+                <span
+                  style="
+                    color: var(--text-secondary);
+                    --darkreader-inline-color: var(
+                      --darkreader-text--text-secondary,
+                      var(--darkreader-text-000000, #dcdbd8)
+                    );
+                  "
+                  data-darkreader-inline-color=""
+                >
                   "Segui stile di UserCard.tsx"
                 </span>
               </p>
             </div>
 
-            <div class="box fragment" style="padding: 30px;">
-              <h4 style="color: var(--accent-good); margin-bottom: 15px; font-size: 1em;">spec-kit per progetti</h4>
-              <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
-                Feature complesse multi-file<br><br>
-                <span style="color: var(--text-secondary);">
+            <div
+              class="box fragment visible"
+              style="padding: 30px"
+              data-fragment-index="2"
+            >
+              <h4
+                style="
+                  color: var(--accent-good);
+                  margin-bottom: 15px;
+                  font-size: 1em;
+                  --darkreader-inline-color: var(
+                    --darkreader-text--accent-good,
+                    var(--darkreader-text-000000, #dcdbd8)
+                  );
+                "
+                data-darkreader-inline-color=""
+              >
+                spec-kit per progetti
+              </h4>
+              <p style="font-size: 0.75em; line-height: 1.5; margin: 0">
+                Feature complesse multi-file<br /><br />
+                <span
+                  style="
+                    color: var(--text-secondary);
+                    --darkreader-inline-color: var(
+                      --darkreader-text--text-secondary,
+                      var(--darkreader-text-000000, #dcdbd8)
+                    );
+                  "
+                  data-darkreader-inline-color=""
+                >
                   constitution → specify → plan → implement
                 </span>
               </p>
             </div>
 
-            <div class="box fragment" style="padding: 30px;">
-              <h4 style="color: var(--accent-good); margin-bottom: 15px; font-size: 1em;">Salva i template</h4>
-              <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
-                Riusa prompt che funzionano<br><br>
-                <span style="color: var(--text-secondary);">
+            <div
+              class="box fragment visible"
+              style="padding: 30px"
+              data-fragment-index="3"
+            >
+              <h4
+                style="
+                  color: var(--accent-good);
+                  margin-bottom: 15px;
+                  font-size: 1em;
+                  --darkreader-inline-color: var(
+                    --darkreader-text--accent-good,
+                    var(--darkreader-text-000000, #dcdbd8)
+                  );
+                "
+                data-darkreader-inline-color=""
+              >
+                Salva i template
+              </h4>
+              <p style="font-size: 0.75em; line-height: 1.5; margin: 0">
+                Riusa prompt che funzionano<br /><br />
+                <span
+                  style="
+                    color: var(--text-secondary);
+                    --darkreader-inline-color: var(
+                      --darkreader-text--text-secondary,
+                      var(--darkreader-text-000000, #dcdbd8)
+                    );
+                  "
+                  data-darkreader-inline-color=""
+                >
                   Crea una libreria personale
                 </span>
               </p>
@@ -500,12 +938,191 @@ Pattern:
         </section>
 
         <!-- Slide 16: Conclusione -->
-        <section>
+        <section
+          style="top: 305px; display: block"
+          class="has-dark-background present"
+          data-index-h="16"
+        >
           <h2>Domande?</h2>
-          <p style="margin-top: 60px">
-            <small>spec-kit: github.com/github/spec-kit</small>
-          </p>
         </section>
+      </div>
+      <div class="slide-number" style="display: block">
+        <a href="#/16">
+          <span class="slide-number-a">17</span>
+        </a>
+      </div>
+      <aside
+        class="controls"
+        style="display: block"
+        data-controls-layout="bottom-right"
+        data-controls-back-arrows="faded"
+      >
+        <button class="navigate-left enabled" aria-label="previous slide">
+          <div class="controls-arrow"></div>
+        </button>
+        <button
+          class="navigate-right"
+          aria-label="next slide"
+          disabled="disabled"
+        >
+          <div class="controls-arrow"></div>
+        </button>
+        <button
+          class="navigate-up"
+          aria-label="above slide"
+          disabled="disabled"
+        >
+          <div class="controls-arrow"></div>
+        </button>
+        <button
+          class="navigate-down"
+          aria-label="below slide"
+          disabled="disabled"
+        >
+          <div class="controls-arrow"></div>
+        </button>
+      </aside>
+      <div class="progress" style="display: block">
+        <span style="transform: scaleX(1)"></span>
+      </div>
+      <div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div>
+      <div class="pause-overlay">
+        <button class="resume-button">Resume presentation</button>
+      </div>
+      <div
+        style="
+          position: absolute;
+          height: 1px;
+          width: 1px;
+          overflow: hidden;
+          clip: rect(1px, 1px, 1px, 1px);
+        "
+        class="aria-status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        Domande? spec-kit: github.com/github/spec-kit
+      </div>
+      <div class="backgrounds">
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: none"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: block"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background past"
+          style="display: block"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
+        <div
+          class="slide-background present"
+          style="display: block"
+          data-loaded="true"
+        >
+          <div class="slide-background-content"></div>
+        </div>
       </div>
     </div>
 
@@ -533,5 +1150,7 @@ Pattern:
         center: true,
       });
     </script>
+
+    <div class="mermaidTooltip" style="opacity: 0"></div>
   </body>
 </html>
