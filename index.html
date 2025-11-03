@@ -14,47 +14,149 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
-      .reveal h1,
-      .reveal h2,
+      :root {
+        --bg-primary: #1a1a1a;
+        --bg-secondary: #252525;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --accent-red: #ef4444;
+        --accent-green: #10b981;
+        --border-color: #3a3a3a;
+      }
+
+      .reveal {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 2rem;
+      }
+
+      .reveal h1 {
+        font-size: 3em;
+        font-weight: 900;
+        color: var(--text-primary);
+        text-transform: none;
+        margin-bottom: 0.5em;
+      }
+
+      .reveal h2 {
+        font-size: 2.2em;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-transform: none;
+        margin-bottom: 0.8em;
+      }
+
       .reveal h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: var(--text-secondary);
         text-transform: none;
       }
+
+      .reveal h4 {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-transform: none;
+      }
+
+      .reveal p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 1em 0;
+      }
+
+      .reveal small {
+        font-size: 0.7em;
+        color: var(--text-secondary);
+      }
+
+      .reveal strong {
+        color: var(--text-primary);
+        font-weight: 700;
+      }
+
+      .reveal code {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9em;
+      }
+
       .reveal pre {
         width: 100%;
-        font-size: 0.5em;
+        margin: 1.5em 0;
+        box-shadow: none;
       }
-      .reveal code {
-        font-family: "Courier New", monospace;
+
+      .reveal pre code {
+        font-family: "JetBrains Mono", monospace;
+        padding: 1.5em;
+        border-radius: 8px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        line-height: 1.6;
+        font-size: 0.55em;
       }
-      .bad-prompt {
-        color: #ff6b6b;
+
+      .reveal ul,
+      .reveal ol {
+        text-align: left;
+        margin-left: 2em;
       }
-      .good-prompt {
-        color: #51cf66;
+
+      .reveal li {
+        color: var(--text-secondary);
+        margin: 0.8em 0;
       }
-      .reveal .comparison {
+
+      .comparison {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-top: 20px;
+        gap: 2em;
+        margin-top: 2em;
       }
-      .reveal .box {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px;
+
+      .box {
+        background: var(--bg-secondary);
+        padding: 2em;
         border-radius: 8px;
+        border: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
       }
-      .reveal small {
-        font-size: 0.6em;
+
+      .box pre {
+        margin: 0;
+        flex: 1;
       }
-      .reveal .workflow-step {
-        background: rgba(81, 207, 102, 0.2);
-        padding: 15px;
-        margin: 10px 0;
-        border-left: 4px solid #51cf66;
-        text-align: left;
+
+      .box pre code {
+        padding: 1em;
+        font-size: 0.75em;
+      }
+
+      .bad-prompt {
+        color: var(--accent-red);
+        font-weight: 700;
+      }
+
+      .good-prompt {
+        color: var(--accent-green);
+        font-weight: 700;
+      }
+
+      .reveal .slide-number {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8em;
+      }
+
+      .reveal .progress {
+        height: 3px;
       }
     </style>
   </head>
@@ -62,10 +164,10 @@
     <div class="reveal">
       <div class="slides">
         <!-- Slide 1: Title -->
-        <section>
-          <h1>Prompt Engineering</h1>
-          <h3>per dev che non vogliono perderci tempo</h3>
-          <p><small>10 minuti di roba che funziona davvero</small></p>
+        <section style="text-align: left; padding-left: 10%;">
+          <h1 style="font-size: 4em; margin-bottom: 0.2em;">Prompt Engineering</h1>
+          <h3 style="font-size: 1.8em; margin-bottom: 1em; opacity: 0.6;">per dev che non vogliono<br>perderci tempo</h3>
+          <p style="opacity: 0.4;"><small>10 minuti di roba che funziona davvero</small></p>
         </section>
 
         <!-- Slide 2: Il problema -->
@@ -91,7 +193,6 @@
 
         <!-- Slide 3: Prompt cattivo vs buono - esempio 1 -->
         <section>
-          <h2>Esempio 1: Componente React</h2>
           <div class="comparison">
             <div class="box">
               <h4 class="bad-prompt">Cattivo</h4>
@@ -117,7 +218,6 @@ Esempio uso nel codice</code></pre>
 
         <!-- Slide 4: Prompt cattivo vs buono - esempio 2 -->
         <section>
-          <h2>Esempio 2: Bug React</h2>
           <div class="comparison">
             <div class="box">
               <h4 class="bad-prompt">Cattivo</h4>
@@ -143,7 +243,6 @@ Mantieni funzionalità esistente</code></pre>
 
         <!-- Slide 5: Esempio 3 - Consistenza con codebase esistente -->
         <section>
-          <h2>Esempio 3: Mantenere lo stile</h2>
           <div class="comparison">
             <div class="box">
               <h4 class="bad-prompt">Cattivo</h4>
@@ -188,140 +287,215 @@ Props: product, onSelect, loading</code></pre>
           </p>
         </section>
 
-        <!-- Slide 10: GitHub spec-kit -->
+        <!-- Slide 7: Il problema dei prompt -->
+        <section>
+          <h2>Ma c'è un problema...</h2>
+          <div style="margin-top: 40px;">
+            <p class="fragment" style="font-size: 0.9em; color: var(--text-secondary); margin: 25px 0;">
+              Devi ripetere contesto/vincoli <strong style="color: var(--accent-bad);">ogni volta</strong>
+            </p>
+            <pre class="fragment"><code class="language-text" style="font-size: 0.45em;">"Usa TypeScript strict, Prisma, test coverage >80%, ..."
+"Usa TypeScript strict, Prisma, test coverage >80%, ..."
+"Usa TypeScript strict, Prisma, test coverage >80%, ..."</code></pre>
+
+            <p class="fragment" style="font-size: 0.9em; color: var(--text-secondary); margin: 35px 0 25px 0;">
+              Difficile <strong style="color: var(--accent-bad);">collaborare</strong> con altri dev
+            </p>
+            <p class="fragment" style="font-size: 0.8em; color: var(--text-secondary); font-style: italic;">
+              "Quali erano i vincoli del progetto? Che stack stiamo usando?"
+            </p>
+
+            <p class="fragment" style="font-size: 1.1em; color: var(--accent-good); margin-top: 50px;">
+              <strong>spec-kit risolve questo problema</strong>
+            </p>
+          </div>
+        </section>
+
+        <!-- Slide 8: GitHub spec-kit intro -->
         <section>
           <h2>GitHub spec-kit</h2>
-          <p>Spec-Driven Development: specifiche eseguibili</p>
+          <p>Spec-Driven Development: da idee vaghe a codice strutturato</p>
           <pre><code class="language-bash">uv tool install specify-cli \
   --from git+https://github.com/github/spec-kit.git</code></pre>
-          <p class="fragment" style="margin-top: 30px">
-            Struttura idee vaghe in piani implementabili
-          </p>
         </section>
 
-        <!-- Slide 11: spec-kit workflow completo -->
+        <!-- Slide 8: Diagramma workflow spec-kit -->
         <section>
-          <h2>Workflow spec-kit</h2>
-          <div class="workflow-step">
-            <strong>1. /speckit.constitution</strong>
-            <p style="margin: 5px 0">
-              Definisci principi: quality, testing, performance
-            </p>
-          </div>
-          <div class="workflow-step fragment">
-            <strong>2. /speckit.specify</strong>
-            <p style="margin: 5px 0">
-              Descrivi COSA vuoi (user stories, requisiti)
-            </p>
-          </div>
-          <div class="workflow-step fragment">
-            <strong>3. /speckit.clarify</strong>
-            <p style="margin: 5px 0">
-              Chiarifica requisiti ambigui (opzionale)
-            </p>
-          </div>
+          <h2>Il workflow</h2>
+          <pre class="mermaid">
+graph LR
+    A[constitution] --> B[specify]
+    B --> C{chiaro?}
+    C -->|no| D[clarify]
+    D --> C
+    C -->|sì| E[plan]
+    E --> F[tasks]
+    F --> G[implement]
+
+    style A fill:#667eea
+    style B fill:#667eea
+    style D fill:#f5576c
+    style E fill:#51cf66
+    style F fill:#51cf66
+    style G fill:#51cf66
+          </pre>
         </section>
 
-        <!-- Slide 12: spec-kit workflow - parte 2 -->
+        <!-- Slide 9: constitution -->
         <section>
-          <h2>Workflow spec-kit (continua)</h2>
-          <div class="workflow-step">
-            <strong>4. /speckit.plan</strong>
-            <p style="margin: 5px 0">
-              Definisci COME: tech stack, architettura
-            </p>
-          </div>
-          <div class="workflow-step fragment">
-            <strong>5. /speckit.tasks</strong>
-            <p style="margin: 5px 0">
-              Genera task list ordinata con dipendenze
-            </p>
-          </div>
-          <div class="workflow-step fragment">
-            <strong>6. /speckit.implement</strong>
-            <p style="margin: 5px 0">Esegue tutti i task in ordine</p>
-          </div>
-          <p class="fragment" style="margin-top: 30px">
-            <small>Tra ogni step: itera, raffina, valida</small>
-          </p>
+          <h2>/speckit.constitution</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 30px;">Principi fondamentali del progetto</p>
+          <pre><code class="language-text">/speckit.constitution
+
+API REST per e-commerce:
+- Node.js 20 + TypeScript strict
+- Test coverage >85% (Jest + Supertest)
+- Rate limiting 100 req/min per user
+- Response time p95 < 200ms
+- OpenAPI 3.0 spec completa
+- Zero downtime deployments
+</code></pre>
         </section>
 
-        <!-- Slide 13: Diagramma workflow interattivo -->
+        <!-- Slide 10: specify -->
         <section>
-          <div class="mermaid" style="transform: scale(0.7)">
-            graph TD A[/speckit.constitution/] -->|Principi progetto|
-            B[/speckit.specify/] B -->|Requisiti COSA| C{Tutto chiaro?} C
-            -->|No| D[/speckit.clarify/] D --> C C -->|Sì| E[/speckit.plan/] E
-            --> F[/speckit.tasks/] F --> G[/speckit.implement/]
-          </div>
+          <h2>/speckit.specify</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 30px;">COSA vuoi costruire (user stories)</p>
+          <pre><code class="language-text">/speckit.specify
+
+Endpoint gestione ordini:
+- POST /orders: crea ordine da carrello
+- GET /orders/:id: dettagli ordine
+- PATCH /orders/:id/status: aggiorna stato
+- GET /orders: lista con paginazione + filtri
+
+Auth: JWT (vedi docs/auth.md)
+Pagamenti: Stripe webhook per conferma
+Errori: formato standard con code + message
+</code></pre>
         </section>
 
-        <!-- Slide 14: spec-kit esempio pratico -->
+        <!-- Slide 11: clarify -->
         <section>
-          <h2>Esempio concreto</h2>
-          <pre><code class="language-bash"># 1. constitution
-/speckit.constitution
-"""
-Principi: code quality, test coverage >80%, performance
-Tech vincolata: TypeScript, Prisma, PostgreSQL
-No breaking changes su API esistenti
-"""
+          <h2>/speckit.clarify</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 30px;">Risolve ambiguità (opzionale)</p>
+          <pre><code class="language-text">/speckit.clarify
 
-# 2. specify
-/speckit.specify
-"Sistema di notifiche real-time per eventi utente.
-Push notifications + email. Storia completa notifiche."
+L'AI chiede:
+- "Paginazione: cursor-based o offset?"
+- "Status ordine: quali transizioni valide?"
+- "Webhook Stripe: retry policy?"
+- "Race condition su stock: come gestire?"
+- "Rollback su payment failure?"
+</code></pre>
+        </section>
 
-# 3. plan
-/speckit.plan
-"Stack: NestJS, Prisma, WebSocket, Bull queue, SendGrid"
+        <!-- Slide 12: plan -->
+        <section>
+          <h2>/speckit.plan</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 30px;">COME implementare (tech stack)</p>
+          <pre><code class="language-text">/speckit.plan
+
+Stack:
+- Express + TypeScript + Prisma
+- PostgreSQL con transazioni SERIALIZABLE
+- Redis per rate limiting + cache
+- Bull queue per async operations
+- Stripe SDK per payments
+
+Pattern:
+- Repository pattern per DB
+- Middleware chain per validation/auth
+- Event emitter per webhooks
+</code></pre>
+        </section>
+
+        <!-- Slide 13: tasks + implement -->
+        <section>
+          <h2>/speckit.tasks → /speckit.implement</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 30px;">Task list → esecuzione automatica</p>
+          <pre><code class="language-text">/speckit.tasks genera:
+1. Prisma schema: Order, OrderItem, Payment
+2. DTO + validation schemas (Zod)
+3. OrderRepository con transactions
+4. OrderService + business logic
+5. Express routes + middleware
+6. Stripe webhook handler
+7. Unit + integration tests
+8. OpenAPI spec generation
+
+/speckit.implement → esegue tutto
 </code></pre>
         </section>
 
         <!-- Slide 14: Quando usare spec-kit -->
         <section>
-          <h2>Quando usare spec-kit</h2>
-          <p><strong class="good-prompt">Usa spec-kit quando:</strong></p>
-          <ul style="font-size: 0.8em">
-            <li>Feature complessa multi-file</li>
-            <li>Serve coordinazione team</li>
-            <li>Requisiti da validare prima di codare</li>
-          </ul>
-          <p style="margin-top: 40px">
-            <strong class="bad-prompt">Non serve per:</strong>
-          </p>
-          <ul style="font-size: 0.8em">
-            <li>Quick fix o hotfix</li>
-            <li>Refactoring singola funzione</li>
-            <li>Spike o prototipi veloci</li>
-          </ul>
+          <h2>Quando usarlo</h2>
+          <div class="comparison">
+            <div class="box">
+              <h4 class="good-prompt">✓ Usa spec-kit</h4>
+              <ul style="font-size: 0.75em; text-align: left; margin: 20px 0 0 20px;">
+                <li>Feature complessa multi-file</li>
+                <li>Coordinazione team</li>
+                <li>Requisiti da validare</li>
+                <li>Architettura da pianificare</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4 class="bad-prompt">✗ Non serve</h4>
+              <ul style="font-size: 0.75em; text-align: left; margin: 20px 0 0 20px;">
+                <li>Quick fix o hotfix</li>
+                <li>Refactor singola funzione</li>
+                <li>Spike o prototipi veloci</li>
+                <li>One-liner changes</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <!-- Slide 15: Takeaways -->
         <section>
-          <h2>Takeaways</h2>
-          <div
-            style="
-              text-align: left;
-              margin-left: 60px;
-              margin-top: 40px;
-              font-size: 0.85em;
-            "
-          >
-            <p><strong>Prompt efficaci:</strong></p>
-            <p>contesto + obiettivo + vincoli + formato output</p>
+          <h2>TL;DR</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px; padding: 0 40px;">
+            <div class="box fragment" style="padding: 30px;">
+              <h4 style="color: var(--accent-good); margin-bottom: 15px; font-size: 1em;">Prompt efficaci</h4>
+              <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
+                contesto + obiettivo + vincoli<br><br>
+                <span style="color: var(--text-secondary);">
+                  "Refactora in TypeScript, pattern repository, mantieni signature"
+                </span>
+              </p>
+            </div>
 
-            <p style="margin-top: 30px"><strong>Itera sempre:</strong></p>
-            <p>prima bozza, poi raffina, poi valida</p>
+            <div class="box fragment" style="padding: 30px;">
+              <h4 style="color: var(--accent-good); margin-bottom: 15px; font-size: 1em;">Riferisci file esistenti</h4>
+              <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
+                Usa la codebase come riferimento<br><br>
+                <span style="color: var(--text-secondary);">
+                  "Segui stile di UserCard.tsx"
+                </span>
+              </p>
+            </div>
 
-            <p style="margin-top: 30px">
-              <strong>spec-kit per progetti complessi:</strong>
-            </p>
-            <p>constitution → specify → plan → tasks → implement</p>
+            <div class="box fragment" style="padding: 30px;">
+              <h4 style="color: var(--accent-good); margin-bottom: 15px; font-size: 1em;">spec-kit per progetti</h4>
+              <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
+                Feature complesse multi-file<br><br>
+                <span style="color: var(--text-secondary);">
+                  constitution → specify → plan → implement
+                </span>
+              </p>
+            </div>
 
-            <p style="margin-top: 30px">
-              <strong>Salva i template che funzionano</strong>
-            </p>
+            <div class="box fragment" style="padding: 30px;">
+              <h4 style="color: var(--accent-good); margin-bottom: 15px; font-size: 1em;">Salva i template</h4>
+              <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
+                Riusa prompt che funzionano<br><br>
+                <span style="color: var(--text-secondary);">
+                  Crea una libreria personale
+                </span>
+              </p>
+            </div>
           </div>
         </section>
 
