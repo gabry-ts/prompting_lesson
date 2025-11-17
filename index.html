@@ -120,7 +120,7 @@
             data-fragment-index="0"
             style="margin-top: 2em; font-size: 0.9em"
           >
-            → LLM confuso
+            → Output confuso, token sprecati
           </p>
           <p class="fragment" data-fragment-index="1" style="margin-top: 2em">
             <small
@@ -152,10 +152,10 @@ Validation: Zod schema
 DB: Prisma + PostgreSQL
 Response: JSON standard con error handling
 
-Segui pattern in /api/auth/route.ts</code></pre>
+Riferimento: /api/auth/route.ts</code></pre>
               <p class="mt-4">
                 <small
-                  >Endpoints chiari, stack definito, riferimento al pattern
+                  >Model definito, stack esplicito, riferimenti al codice
                   esistente</small
                 >
               </p>
@@ -192,12 +192,13 @@ Submit: POST /api/checkout
 Error handling: usa useToast da @/hooks/useToast
 Loading: Skeleton da @/components/ui/Skeleton
 
-Segui pattern di:
+Riferimenti:
 - SignUpForm.tsx (form structure)
 - useToast.ts (error/success notifications)</code></pre>
               <p class="mt-4">
                 <small
-                  >Riferimenti a dipendenze interne e pattern esistenti</small
+                  >Model definito, stack esplicito, riferimenti al codice
+                  esistente</small
                 >
               </p>
             </div>
@@ -207,14 +208,14 @@ Segui pattern di:
         <!-- Slide 6: Le 3 regole d'oro -->
         <section>
           <ol style="font-size: 1.2em; line-height: 2em">
-            <li class="fragment" data-fragment-index="0">
+            <li class="fragment">
               <strong>Contesto</strong>: linguaggio, framework, vincoli tecnici
             </li>
-            <li class="fragment" data-fragment-index="1">
+            <li class="fragment">
               <strong>Obiettivo</strong>: cosa vuoi ottenere esattamente
             </li>
-            <li class="fragment" data-fragment-index="2">
-              <strong>Formato</strong>: come vuoi l'output
+            <li class="fragment">
+              <strong>Formato</strong>: struttura dell'output atteso
             </li>
           </ol>
         </section>
@@ -265,7 +266,7 @@ Breakdown in task sequenziali con:
 - File coinvolti
 - Acceptance criteria</code></pre>
               <p class="mt-4">
-                <small>Output: checklist pronta per l'esecuzione</small>
+                <small>Breakdown eseguibile step-by-step</small>
               </p>
             </div>
           </div>
@@ -298,7 +299,8 @@ Breakdown in task sequenziali con:
 Aggiorna questo file quando ci sono decisioni architetturali.</code></pre>
               <p class="mt-4">
                 <small
-                  >Inizia nuove chat con: "Leggi CONTEXT.md e procedi..."</small
+                  >Riusa in nuove chat: "Leggi CONTEXT.md prima di
+                  iniziare"</small
                 >
               </p>
             </div>
