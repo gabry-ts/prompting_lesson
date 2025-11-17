@@ -120,7 +120,7 @@
             data-fragment-index="0"
             style="margin-top: 2em; font-size: 0.9em"
           >
-            → LLM confuso, output inutile, tempo perso
+            → LLM confuso
           </p>
           <p class="fragment" data-fragment-index="1" style="margin-top: 2em">
             <small
@@ -130,36 +130,10 @@
           </p>
         </section>
 
-        <!-- Slide 3: Esempio prompt buono - Button component -->
-        <section>
-          <div class="max-w-4xl mx-auto">
-            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
-              <pre
-                class="code-wrapper"
-              ><code class="language-text">Crea Button component React:
-
-Props: label, onClick, disabled, variant
-Variant: 'primary' | 'secondary'
-Stile: Tailwind CSS
-Accessibility: aria-labels
-TypeScript con PropTypes
-
-Esempio uso nel codice
-
-Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo rispondere.</code></pre>
-              <p class="mt-4">
-                <small>Props definite, vincoli di stile, accessibilità</small>
-              </p>
-            </div>
-          </div>
-        </section>
-
         <!-- Slide 4: Esempio prompt buono - REST API -->
         <section>
           <div class="max-w-4xl mx-auto">
             <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
               <pre
                 class="code-wrapper"
               ><code class="language-text">Crea REST API per gestione utenti:
@@ -170,14 +144,15 @@ Endpoints:
 - PUT /api/users/:id
 - DELETE /api/users/:id
 
+User model:
+- id, email, password, name, createdAt
+
 Auth: JWT bearer token
 Validation: Zod schema
 DB: Prisma + PostgreSQL
 Response: JSON standard con error handling
 
-Segui pattern in /api/auth/route.ts
-
-Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo rispondere.</code></pre>
+Segui pattern in /api/auth/route.ts</code></pre>
               <p class="mt-4">
                 <small
                   >Endpoints chiari, stack definito, riferimento al pattern
@@ -192,7 +167,6 @@ Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo ri
         <section>
           <div class="max-w-4xl mx-auto">
             <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
               <pre
                 class="code-wrapper"
               ><code class="language-text">Crea CheckoutForm component:
@@ -202,21 +176,25 @@ Layout: stepper multi-step (shipping/payment/review)
 
 Campi shipping:
 - nome, cognome, indirizzo, città, CAP, paese
-- validazione real-time, async per CAP
+- validazione async per CAP:
+  POST /api/address/cap-validate
+  Input: { cap: "20121", paese: "IT" }
+  Output: { valid: true, citta: "Milano" }
 
 Campi payment:
 - carta (Stripe Elements integration)
 - billing address checkbox "uguale a shipping"
 
 Submit: POST /api/checkout
+  Input: { shipping: {...}, payment: {...}, items: [...] }
+  Output: { orderId: "ORD-123", status: "confirmed" }
+
 Error handling: usa useToast da @/hooks/useToast
 Loading: Skeleton da @/components/ui/Skeleton
 
 Segui pattern di:
-- LoginForm.tsx (form structure)
-- useToast.ts (error/success notifications)
-
-Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo rispondere.</code></pre>
+- SignUpForm.tsx (form structure)
+- useToast.ts (error/success notifications)</code></pre>
               <p class="mt-4">
                 <small
                   >Riferimenti a dipendenze interne e pattern esistenti</small
@@ -227,77 +205,41 @@ Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo ri
         </section>
 
         <!-- Slide 6: Le 3 regole d'oro -->
-        <section
-          style="top: 104.5px; display: none"
-          class="has-dark-background past"
-          data-fragment="3"
-          hidden=""
-          aria-hidden="true"
-          data-index-h="5"
-        >
-          <h2>Le 3 regole d'oro</h2>
-          <ol>
-            <li class="fragment visible" data-fragment-index="0">
+        <section>
+          <ol style="font-size: 1.2em; line-height: 2em">
+            <li class="fragment" data-fragment-index="0">
               <strong>Contesto</strong>: linguaggio, framework, vincoli tecnici
             </li>
-            <li class="fragment visible" data-fragment-index="1">
+            <li class="fragment" data-fragment-index="1">
               <strong>Obiettivo</strong>: cosa vuoi ottenere esattamente
             </li>
-            <li class="fragment visible" data-fragment-index="2">
+            <li class="fragment" data-fragment-index="2">
               <strong>Formato</strong>: come vuoi l'output
             </li>
           </ol>
-          <p
-            class="fragment visible"
-            style="margin-top: 40px"
-            data-fragment-index="3"
-          >
-            <small>Pensalo come una user story ben scritta</small>
-          </p>
         </section>
 
         <!-- Slide 7: Prompt "as you go" -->
         <section>
-          <h2>Prompt "as you go"</h2>
-          <div class="grid grid-cols-2 gap-6 mt-6">
+          <div class="max-w-5xl mx-auto">
             <div class="space-y-4">
-              <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
-                <h4 class="good-prompt mb-2" style="font-size: 0.9em">
-                  Gestione ambiguità
-                </h4>
+              <div class="bg-gray-800/50 p-5 rounded-lg border border-gray-700">
                 <pre
                   class="code-wrapper"
                   style="margin: 0"
-                ><code class="language-text no-scroll" style="font-size: 0.45em">Se qualcosa non è chiaro, fai domande prima di procedere</code></pre>
+                ><code class="language-text no-scroll" style="font-size: 0.55em; line-height: 1.6">Se qualcosa non è chiaro, fai domande prima di procedere</code></pre>
               </div>
-              <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
-                <h4 class="good-prompt mb-2" style="font-size: 0.9em">
-                  Checkpoint
-                </h4>
+              <div class="bg-gray-800/50 p-5 rounded-lg border border-gray-700">
                 <pre
                   class="code-wrapper"
                   style="margin: 0"
-                ><code class="language-text no-scroll" style="font-size: 0.45em">Dopo ogni step, mostrami il codice e aspetta conferma</code></pre>
+                ><code class="language-text no-scroll" style="font-size: 0.55em; line-height: 1.6">Dopo ogni step, mostrami il codice e aspetta conferma</code></pre>
               </div>
-            </div>
-            <div class="space-y-4">
-              <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
-                <h4 class="good-prompt mb-2" style="font-size: 0.9em">
-                  Spiegazioni
-                </h4>
+              <div class="bg-gray-800/50 p-5 rounded-lg border border-gray-700">
                 <pre
                   class="code-wrapper"
                   style="margin: 0"
-                ><code class="language-text no-scroll" style="font-size: 0.45em">Spiega brevemente perché questo approccio rispetto ad alternative</code></pre>
-              </div>
-              <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
-                <h4 class="good-prompt mb-2" style="font-size: 0.9em">
-                  Validazione
-                </h4>
-                <pre
-                  class="code-wrapper"
-                  style="margin: 0"
-                ><code class="language-text no-scroll" style="font-size: 0.45em">Prima di procedere, verifica che il codice precedente funzioni</code></pre>
+                ><code class="language-text no-scroll" style="font-size: 0.55em; line-height: 1.6">Prima di procedere, verifica che il codice precedente funzioni</code></pre>
               </div>
             </div>
           </div>
@@ -308,7 +250,6 @@ Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo ri
           <h2>TASKS.md</h2>
           <div class="max-w-4xl mx-auto">
             <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
               <pre
                 class="code-wrapper"
               ><code class="language-text">Crea un file TASKS.md con la lista di task per implementare:
@@ -335,7 +276,6 @@ Breakdown in task sequenziali con:
           <h2>CONTEXT.md</h2>
           <div class="max-w-4xl mx-auto">
             <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
               <pre
                 class="code-wrapper"
               ><code class="language-text">Crea un file CONTEXT.md con:
@@ -357,7 +297,9 @@ Breakdown in task sequenziali con:
 
 Aggiorna questo file quando ci sono decisioni architetturali.</code></pre>
               <p class="mt-4">
-                <small>Inizia nuove chat con: "Leggi CONTEXT.md e procedi..."</small>
+                <small
+                  >Inizia nuove chat con: "Leggi CONTEXT.md e procedi..."</small
+                >
               </p>
             </div>
           </div>
