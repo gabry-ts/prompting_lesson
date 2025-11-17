@@ -42,6 +42,13 @@
         max-height: 500px !important;
         overflow-y: auto !important;
       }
+
+      /* No scroll for "as you go" prompts - word wrap instead */
+      .reveal pre code.no-scroll {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        overflow-x: visible !important;
+      }
     </style>
     <style type="text/css">
       .hljs-ln {
@@ -138,7 +145,9 @@ Stile: Tailwind CSS
 Accessibility: aria-labels
 TypeScript con PropTypes
 
-Esempio uso nel codice</code></pre>
+Esempio uso nel codice
+
+Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo rispondere.</code></pre>
               <p class="mt-4">
                 <small>Props definite, vincoli di stile, accessibilità</small>
               </p>
@@ -166,7 +175,9 @@ Validation: Zod schema
 DB: Prisma + PostgreSQL
 Response: JSON standard con error handling
 
-Segui pattern in /api/auth/route.ts</code></pre>
+Segui pattern in /api/auth/route.ts
+
+Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo rispondere.</code></pre>
               <p class="mt-4">
                 <small
                   >Endpoints chiari, stack definito, riferimento al pattern
@@ -203,7 +214,9 @@ Loading: Skeleton da @/components/ui/Skeleton
 
 Segui pattern di:
 - LoginForm.tsx (form structure)
-- useToast.ts (error/success notifications)</code></pre>
+- useToast.ts (error/success notifications)
+
+Se qualcosa del prompt sopra non è chiaro, fai una lista di domande che devo rispondere.</code></pre>
               <p class="mt-4">
                 <small
                   >Riferimenti a dipendenze interne e pattern esistenti</small
@@ -243,7 +256,114 @@ Segui pattern di:
           </p>
         </section>
 
-        <!-- Slide 7: Il problema dei prompt -->
+        <!-- Slide 7: Prompt "as you go" -->
+        <section>
+          <h2>Prompt "as you go"</h2>
+          <div class="grid grid-cols-2 gap-6 mt-6">
+            <div class="space-y-4">
+              <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                <h4 class="good-prompt mb-2" style="font-size: 0.9em">
+                  Gestione ambiguità
+                </h4>
+                <pre
+                  class="code-wrapper"
+                  style="margin: 0"
+                ><code class="language-text no-scroll" style="font-size: 0.45em">Se qualcosa non è chiaro, fai domande prima di procedere</code></pre>
+              </div>
+              <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                <h4 class="good-prompt mb-2" style="font-size: 0.9em">
+                  Checkpoint
+                </h4>
+                <pre
+                  class="code-wrapper"
+                  style="margin: 0"
+                ><code class="language-text no-scroll" style="font-size: 0.45em">Dopo ogni step, mostrami il codice e aspetta conferma</code></pre>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                <h4 class="good-prompt mb-2" style="font-size: 0.9em">
+                  Spiegazioni
+                </h4>
+                <pre
+                  class="code-wrapper"
+                  style="margin: 0"
+                ><code class="language-text no-scroll" style="font-size: 0.45em">Spiega brevemente perché questo approccio rispetto ad alternative</code></pre>
+              </div>
+              <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                <h4 class="good-prompt mb-2" style="font-size: 0.9em">
+                  Validazione
+                </h4>
+                <pre
+                  class="code-wrapper"
+                  style="margin: 0"
+                ><code class="language-text no-scroll" style="font-size: 0.45em">Prima di procedere, verifica che il codice precedente funzioni</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8: Task breakdown con AI -->
+        <section>
+          <h2>TASKS.md</h2>
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
+              <pre
+                class="code-wrapper"
+              ><code class="language-text">Crea un file TASKS.md con la lista di task per implementare:
+
+Feature: Sistema di autenticazione JWT
+- Endpoints: /login, /register, /refresh
+- Stack: Express + Prisma + PostgreSQL
+- Test coverage minimo 85%
+
+Breakdown in task sequenziali con:
+- Descrizione chiara di ogni task
+- Dipendenze tra task
+- File coinvolti
+- Acceptance criteria</code></pre>
+              <p class="mt-4">
+                <small>Output: checklist pronta per l'esecuzione</small>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 9: Context file per continuità -->
+        <section>
+          <h2>CONTEXT.md</h2>
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+              <h4 class="good-prompt mb-4">👍🏻 Prompt efficace</h4>
+              <pre
+                class="code-wrapper"
+              ><code class="language-text">Crea un file CONTEXT.md con:
+
+## Stack tecnico
+- Node.js 20 + TypeScript strict
+- Database: PostgreSQL + Prisma
+- Auth: JWT + bcrypt
+
+## Convenzioni
+- Naming: camelCase per variabili, PascalCase per componenti
+- Error handling: custom AppError class
+- Testing: Jest + Supertest
+
+## Struttura progetto
+- /src/routes: Express routes
+- /src/services: Business logic
+- /src/middleware: Auth, validation, error handling
+
+Aggiorna questo file quando ci sono decisioni architetturali.</code></pre>
+              <p class="mt-4">
+                <small>Inizia nuove chat con: "Leggi CONTEXT.md e procedi..."</small>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 10: Il problema dei prompt -->
         <section
           style="top: 0px; display: none"
           class="has-dark-background past"
