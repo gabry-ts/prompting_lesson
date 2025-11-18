@@ -246,33 +246,7 @@ Riferimenti:
           </div>
         </section>
 
-        <!-- Slide 8: Task breakdown con AI -->
-        <section>
-          <h2>TASKS.md</h2>
-          <div class="max-w-4xl mx-auto">
-            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-              <pre
-                class="code-wrapper"
-              ><code class="language-text">Crea un file TASKS.md con la lista di task per implementare:
-
-Feature: Sistema di autenticazione JWT
-- Endpoints: /login, /register, /refresh
-- Stack: Express + Prisma + PostgreSQL
-- Test coverage minimo 85%
-
-Breakdown in task sequenziali con:
-- Descrizione chiara di ogni task
-- Dipendenze tra task
-- File coinvolti
-- Acceptance criteria</code></pre>
-              <p class="mt-4">
-                <small>Breakdown eseguibile step-by-step</small>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Slide 9: Context file per continuità -->
+        <!-- Slide 8: Context file per continuità -->
         <section>
           <h2>CONTEXT.md</h2>
           <div class="max-w-4xl mx-auto">
@@ -302,6 +276,56 @@ Aggiorna questo file quando ci sono decisioni architetturali.</code></pre>
                   >Riusa in nuove chat: "Leggi CONTEXT.md prima di
                   iniziare"</small
                 >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 9: Task breakdown con AI -->
+        <section>
+          <h2>TASKS.md</h2>
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+              <pre
+                class="code-wrapper"
+              ><code class="language-text">Crea un file TASKS.md con la lista di task per implementare:
+
+Feature: Sistema di autenticazione JWT
+- Endpoints: /login, /register, /refresh
+- Stack: Express + Prisma + PostgreSQL
+- Test coverage minimo 85%
+
+Breakdown in task sequenziali con:
+- Descrizione chiara di ogni task
+- Dipendenze tra task
+- File coinvolti</code></pre>
+              <p class="mt-4">
+                <small>Breakdown eseguibile step-by-step</small>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 10: Eseguire le task -->
+        <section>
+          <h2>Eseguire le task</h2>
+          <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+              <pre
+                class="code-wrapper"
+              ><code class="language-text">Leggi CONTEXT.md e TASKS.md.
+
+Implementa le task dalla 1 alla 4.
+
+Per ogni task:
+- Scrivi il codice
+- Esegui i test
+- Marca la task come completata
+- Aspetta conferma prima della prossima
+
+Se incontri errori, fermati e segnala.</code></pre>
+              <p class="mt-4">
+                <small>Esecuzione controllata con tracking dello stato</small>
               </p>
             </div>
           </div>
@@ -431,11 +455,17 @@ Aggiorna questo file quando ci sono decisioni architetturali.</code></pre>
           <div
             class="mermaid bg-gray-800/50 p-8 rounded-lg border border-gray-700"
           >
-            graph LR A[constitution]:::blue --> B[specify]:::blue B -->
-            C{chiaro?} C -->|no| D[clarify]:::red D --> C C -->|sì|
-            E[plan]:::green E --> F[tasks]:::green F --> G[implement]:::green
-            classDef blue fill:#667eea classDef red fill:#f5576c classDef green
-            fill:#51cf66
+            graph LR
+            A[constitution]:::blue --> B[specify]:::blue
+            B --> C{chiaro?}
+            C -->|no| D[clarify]:::red
+            D --> C
+            C -->|sì| E[plan]:::green
+            E --> F[tasks]:::green
+            F --> G[implement]:::green
+            classDef blue fill:#667eea
+            classDef red fill:#f5576c
+            classDef green fill:#51cf66
           </div>
         </section>
 
@@ -671,14 +701,6 @@ Pattern:
           </div>
         </section>
 
-        <!-- Slide 15: Conclusione -->
-        <section
-          style="top: 305px; display: block"
-          class="has-dark-background present"
-          data-index-h="16"
-        >
-          <h2>Domande?</h2>
-        </section>
       </div>
       <div class="slide-number" style="display: block">
         <a href="#/16">
